@@ -22,6 +22,6 @@ to use it as a practice guide or refresher on any topics you're not too strong i
 |Linked lists |Time Complexity:watch:|Space Complexity:black_large_square:|Description:books:|    
 |-------------|-----------------------|------------------------------------|------------------|
 
-These are some of many structures to implement, feel free to mess around and make operations that take in a faster time and spcae complexity. 
+**These are some of many structures to implement, feel free to mess around and make operations that take in a faster time and spcae complexity. 
 If you look into each file you'll see that there's plenty of comments to understand what each line of code is doing. Enjoy using this source, again I don't take 
-credit for it visit the author. [![Link - Udemy Course](https://img.shields.io/badge/Link-Udemy_Course-0099e5)](https://www.udemy.com/course/algorithms-and-data-structures-in-python/)
+credit for it visit the author.** [![Link - Udemy Course](https://img.shields.io/badge/Link-Udemy_Course-0099e5)](https://www.udemy.com/course/algorithms-and-data-structures-in-python/)
