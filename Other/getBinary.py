@@ -1,4 +1,4 @@
-#Getting yhe binary of a number
+#Getting the binary of a number
 print (bin(1))
 print (bin(2))
 print (bin(3))
