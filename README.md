@@ -9,7 +9,7 @@ to use it as a practice guide or refresher on any topics you're not too strong i
 
 # 🛠️ The Data Structures + Use case
 
-**Arrays are useful for storing a collection of data of the same type (ints, floats, strings), when deleting an item everything shifts to the left O(n). When inserting an item everything is shifted to the right to make room for the new element O(n). Appending and poping is O(1) since it adds or removes at the end of the list.** 
+**Arrays are useful for storing a collection of data of the same type (ints, floats, strings), when deleting an item everything shifts to the left O(n). When inserting an item everything is shifted to the right to make room for the new element O(n). Appending and popping is O(1) since it adds or removes at the end of the list.** 
 
 |    Arrays        |Time Complexity:watch:|Space Complexity:black_large_square:|Description:books:|                                                                                                                    
 |------------------|---------------                                 |----------------|--------------------------|
