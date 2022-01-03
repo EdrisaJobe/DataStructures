@@ -8,7 +8,7 @@ Appending and popping is O(1) since it adds or removes at the end of the list.**
 O(1)    |O(n)  | O(n)
  
 
-# Examples
+# 🛠️ Examples
 |            |Time Complexity (Best) :watch:|Space Complexity:black_large_square:|Description:books:|                                                                                                                    
 |------------------|---------------                                 |----------------|--------------------------|
 |Array reversal    | O(n) - Where n is number of elements reversed. |  O(1) - No matter how big the array, it requires same space. |We take in n amounts of data within an array and take two pointers which take the start and end of an index. We then swap the starting index with the end index until they reach the two pointers meet. *e.g. [1,2,3,4] -> [4,3,2,1]*                                                                                                                                  
