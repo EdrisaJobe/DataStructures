@@ -11,7 +11,7 @@ to use it as a practice guide or refresher on any topics you're not too strong i
 
 [![Arry - Learn about an array](https://img.shields.io/badge/Arry-Learn_about_an_array-00A1E9?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/Array)
 
-[![Linked list - Learn about linked list](https://github.com/EdrisaJobe/DataStructures/tree/main/Linked%20List)]
+[![Linked list - Learn about linked list](https://img.shields.io/badge/Linked_List-Learn_about_Linked_List-83B81A?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/Linked%20List)
 
 [![Doubly Linked List - Learn about doubly linked list](https://img.shields.io/badge/Doubly_Linked_List-Learn_about_doubly_linked_list-00B388?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/LinkedLists)
 
