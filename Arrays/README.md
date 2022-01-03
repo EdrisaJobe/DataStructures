@@ -1,11 +1,7 @@
 # Arrays
-**Arrays are useful for storing a collection of data of the same type (ints, floats, strings). 
-When deleting an item everything shifts to the left O(n). 
-When inserting an item everything is shifted to the right to make room for the new element O(n). 
-Appending and popping is O(1) since it adds or removes at the end of the list.** 
-|Append| Insertion|Deletion 
-|------|-------|------------
-O(1)    |O(n)  | O(n)
+|Append| Insertion|Deletion |Description |
+|------|-------|------------|------------|
+O(1)    |O(n)  | O(n)       | Arrays are useful for storing a collection of data of the same type (ints, floats, strings). When deleting an item everything shifts to the left O(n). When inserting an item everything is shifted to the right to make room for the new element O(n). Appending and popping is O(1) since it adds or removes at the end of the list and nothing shifts.
  
 
 # 🛠️ Examples
