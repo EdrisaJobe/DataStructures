@@ -9,7 +9,7 @@ to use it as a practice guide or refresher on any topics you're not too strong i
 
 # <img src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/000000/external-brain-medical-healthcare-those-icons-lineal-color-those-icons.png"/> Learn More
 
-[![Array - Learn about an array](https://img.shields.io/badge/Array-Learn_about_an_array-0099e5?style=for-the-badge)](https://https://github.com/EdrisaJobe/DataStructures/tree/main/Arrays)
+[![Arry - Learn about an array](https://img.shields.io/badge/Arry-Learn_about_an_array-00A1E9?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/Array)
 
 [![Linked list - Learn about linked list](https://img.shields.io/badge/Linked_list-Learn_about_linked_list-0ABF53?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/LinkedLists)
 
