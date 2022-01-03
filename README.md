@@ -13,6 +13,12 @@ to use it as a practice guide or refresher on any topics you're not too strong i
 
 [![Linked list - Learn about linked list](https://img.shields.io/badge/Linked_list-Learn_about_linked_list-0ABF53?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/LinkedLists)
 
+[![Doubly Linked List - Learn about doubly linked list](https://img.shields.io/badge/Doubly_Linked_List-Learn_about_doubly_linked_list-00B388?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/LinkedLists)
+
+[![Stack - Learn about stack](https://img.shields.io/badge/Stack-Learn_about_stack-F46D01?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/Stack)
+
+[![Heap - Learn about heap](https://img.shields.io/badge/Heap-Learn_about_heap-9999FF?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/Heap)
+
 
 These are some of many structures to implement, feel free to mess around and make operations that take in a faster time and spcae complexity. 
 If you look into each file you'll see that there's plenty of comments to understand what each line of code is doing. Enjoy using this source, again I don't take 
