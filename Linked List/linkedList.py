@@ -77,7 +77,7 @@ class LinkedList:
             print(actual_node.data)
             actual_node = actual_node.nextNode
 
-# inserting a random set of daat within the list        
+# inserting a random set of data within the list        
 linked_list = LinkedList()
 
 # inserting at beginning O(1)
