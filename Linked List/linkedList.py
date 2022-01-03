@@ -6,8 +6,8 @@ class Node:
     # data is also stored, data is simply the value of the Node
     def __init__(self, data):
         
-        # defining the head node
-        self.head = data
+        # defining data to equal itself
+        self.data = data
         # referencing other nodes within the list
         self.nextNode = None # None is null, empty
         
@@ -44,7 +44,7 @@ class LinkedList:
     def insert_end(self, data):
         
         # similar to inserting, we have to start from the head and work our way up
-        self.numNodes = self.numNodes +1 
+        self.numNodes = self.numNodes + 1 
         new_node = Node(data)
         
         # points to the head of the list
@@ -58,3 +58,34 @@ class LinkedList:
         
         # inserts the Node into the new assigned value new_node at the end
         actual_node.nextNode = new_node
+    
+    
+    # the size of the list
+    def arrSize(self):
+        
+        # get the number of nodes
+        return self.numNodes
+    
+    # traversing through the list and storing a ref to the actual_node at the beginning 
+    def traverse(self):
+        
+        actual_node = self.head
+        
+        # not at the end of linklist
+        while actual_node is not None:
+            
+            print(actual_node.data)
+            actual_node = actual_node.nextNode
+
+# inserting a random set of daat within the list        
+linked_list = LinkedList()
+
+# inserting at beginning O(1)
+linked_list.insert_start(4)
+linked_list.insert_start(3)
+linked_list.insert_start(7)
+
+# inserting at end O(n)
+linked_list.insert_end(10)
+
+linked_list.traverse()
