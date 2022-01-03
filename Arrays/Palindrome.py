@@ -36,3 +36,8 @@ if __name__ == '__main__':
     
     print(palindrome('madam')) # True
     print(palindrome('shoes')) # False
+    
+    data = [123,3]
+    data2 = data
+    data2.append(100)
+    print(data)

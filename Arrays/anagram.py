@@ -11,7 +11,7 @@ def anagram(str1, str2):
     str1 = sorted(str1)
     str2 = sorted(str2)
     
-    # for loop to iterate adn check the letters with the same indexes
+    # for loop to iterate and check the letters with the same indexes
     # len can be str1 or str2 as they both should equal to the same len
     # O(n) runtime
     for i in range(len(str1)):

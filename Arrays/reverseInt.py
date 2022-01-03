@@ -1,4 +1,4 @@
-# reverse the integer numbers, time is O(n) space is O(1)
+# reverse the integer numbers, time is O(log n) where n is # of digits in the integer space is O(1)
 def reverseInt(n):
     
     # remainder
