@@ -1,5 +1,5 @@
 # Data Structures - [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
-This is my main reference for anyone who's looking to sharpen their skills with datastructures, feel free to take the work and 
+This is my main reference for anyone who's looking to sharpen their skills with data structures, feel free to take the work and 
 change it up. There's a wide variety of topics I've implemented throughout my learning of datastructures and algorithms and love to
 share the knowledge with the community. All the code is in Python as it's my goto language of choice but anyone is more than welcome
 to use it as a practice guide or refresher on any topics you're not too strong in.
