@@ -102,7 +102,7 @@ class LinkedList:
 # inserting a random set of data within the list        
 linked_list = LinkedList()
 
-# inserting at beginning O(1)
+# inserting at beginning - O(1)
 linked_list.insert_start(4)
 linked_list.insert_start(3)
 linked_list.insert_start(7)
