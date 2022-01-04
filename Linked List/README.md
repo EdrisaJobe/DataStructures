@@ -9,7 +9,7 @@ O(n)    |O(1)   |O(n)       | A linear data structure that is used to hold data 
 
 **The class Node**
 ```
-
+# Just a blueprint for implementing the data structure you want
 # Node class that has a constructor to initialize data and nextNode
 # Classes should be named with caps to make them easy to read
 class Node:
