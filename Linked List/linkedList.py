@@ -59,7 +59,48 @@ class LinkedList:
         # inserts the Node into the new assigned value new_node at the end
         actual_node.nextNode = new_node
     
-    
+    # removing specific data from within the list
+    # [2]->[4]->[1]->[3]->null | w\if we remove element [1] we set element [4] to point to ->[3]
+    def remove(self, data):
+        
+        # if the head is empty
+        if self.head is None:
+            
+            # we return whatever is in the list
+            return
+        
+        # set the actual_node to the head
+        actual_node = self.head
+        # 
+        previous_node = None
+        
+        # we search for the item we want to delete by making sure the head is not empty and has data
+        while actual_node is not None and actual_node.data != data:
+            
+            # we consider the next previous element the head
+            previous_node = actual_node
+            
+            # after removal, we make the next item the new head
+            actual_node = actual_node.nextNode
+        
+        # if the head is empty
+        # search miss - the item is not present in the list
+        if actual_node is None:
+            return
+        
+        # update the size of list after removal
+        self.numNodes = self.numNodes - 1
+        
+        # if the previous head is empty (getting rid of the given Node
+        if previous_node is None:
+             
+             # give the head Node a new Node
+             self.head = actual_node.nextNode 
+        else:
+            
+            # reset the previous Node to be the head
+            previous_node.nextNode = actual_node.nextNode
+            
     # the size of the list
     def arrSize(self):
         
@@ -88,4 +129,11 @@ linked_list.insert_start(7)
 # inserting at end O(n)
 linked_list.insert_end(10)
 
+# remove an item
+linked_list.remove(3)
+
+# gets the size of array
+print("Size: %s" % str(linked_list.arrSize()))
+
+# call the function
 linked_list.traverse()
