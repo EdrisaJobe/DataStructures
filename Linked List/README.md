@@ -3,7 +3,29 @@
 |------|-------|------------|------------|
 O(n)    |O(1) - head O(n) - tail|O(n)       | A linear data structure that is used to hold data in individual objects called nodes. Main purpose is for the efficient **insertion and deletion** methods, can be used alongsides stacks and queues. 
 
- 
+ # Reverse a Singly LinkedList
+```
+# reverse the linked list O(n)
+    def reverse(self):
+        
+        # current_node  is the head, prev and next Nodes are both empty
+        current_node = self.head
+        prev_node = None
+        
+        # while the head is not empty loop
+        while current_node is not None:
+            
+            # update the references | [curr] -> [nextNode] -> [] -> null
+            nextNode = current_node.nextNode
+            # current node of the next node is now the prev node | null <-[prevNode] [curr.next] -> [] -> null
+            current_node.nextNode = prev_node
+            # prev_node is now where the current_node is | null <-[] [prevNode/curr] -> [nextNode] -> null
+            prev_node = current_node
+            # the current node is not the where the next_node is | null <-[] <- [prevNode]  [curr.next] -> null
+            current_node = nextNode
+        # when the prev_node points to the last node, make it the head
+        self.head = prev_node
+```
 
 # 🛠️ Step-by-step
 
@@ -156,7 +178,6 @@ linked_list.insert_end(10)
 
 linked_list.traverse()
 ```
-
 
 
 
