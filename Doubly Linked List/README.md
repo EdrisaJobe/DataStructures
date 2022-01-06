@@ -91,7 +91,7 @@ class DoublyLinkedList:
             # move from node to node within the list backwards
             actual_node = actual_node.previous
 ```
-**Inserting/Printing out data/ Forwards and Backwards**
+**Function call: Inserting at end/traverse forward and backwards**
 ```
 # function call
 if __name__ == '__main__':
@@ -102,9 +102,9 @@ if __name__ == '__main__':
      listL.insert_end(7)
      listL.insert_end(3)
      
-     listL.traverse_forward()
+     listL.traverse_forward() # null<-[1]<->[5]<->[7]<->[3]->null
      print("----")
-     listL.traverse_backward()
+     listL.traverse_backward() # null<-[3]<->[7]<->[5]<->[1]->null
 ```
 
 
