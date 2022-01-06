@@ -1,7 +1,7 @@
-# Singly Linked List
-|Access| Insertion|Deletion |Description |
-|------|-------|------------|------------|
-O(n)    |O(1)   |O(n)       | A linear data structure that is used to hold data in individual objects called nodes. Main purpose is for the efficient **insertion and deletion** methods, can be used alongsides stacks and queues. 
+# Doubly Linked List
+|Access| Search |Insertion head and tail|Deletion head and tail |Description |
+|------|----------|-------|------------|------------|
+O(n)    |O(n)     |O(1)   |O(1)       | Differs from a singly linked list because it has references that point both to the next node and previous node, the head is also pointing to null compared to a sinlgy linked list which the tail only points at null. Also, insertion and deletion at the tail is only O(1) due to having double pointers. Like a sinlgy, the main goal is to store items efficiently inserting and deleting.
 
  
 

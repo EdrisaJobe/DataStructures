@@ -129,7 +129,6 @@ linked_list.insert_start(7)
 # inserting at end O(n)
 linked_list.insert_end(10)
 
-<<<<<<< HEAD
 # remove an item
 linked_list.remove(3)
 
@@ -138,6 +137,3 @@ print("Size: %s" % str(linked_list.arrSize()))
 
 # call the function
 linked_list.traverse()
-=======
-linked_list.traverse()
->>>>>>> 32df36e10be0e77e9326bf037fa53fb6b6ab92b1
