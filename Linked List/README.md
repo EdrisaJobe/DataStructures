@@ -5,7 +5,7 @@ O(n)    |O(1) - head O(n) - tail|O(n)       | A linear data structure that is us
 
  # Reverse a Singly LinkedList
 ```
-# reverse the linked list O(n)
+    # reverse the linked list O(n)
     def reverse(self):
         
         # current_node  is the head, prev and next Nodes are both empty
