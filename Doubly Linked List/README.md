@@ -9,152 +9,102 @@ O(n)    |O(n)     |O(1)   |O(1)       | Differs from a singly linked list becaus
 
 **The class Node**
 ```
-# Just a blueprint for implementing the data structure you want
-# Node class that has a constructor to initialize data and nextNode
-# Classes should be named with caps to make them easy to read
+# starting with a class Node, followed by the main LinkedList class
+# Doubly | null <- [] <-> [] <-> [] -> null
 class Node:
     
-    # initializing the self convention(variable), making it known that it takes instance of its class
-    # data is also stored, data is simply the value of the Node
     def __init__(self, data):
         
-        # defining data to equal itself
+        # data will take in whatever amount we give it
         self.data = data
-        # referencing other nodes within the list
-        self.nextNode = None # None is null, empty
+        
+        # we want each Node to reference to one another
+        self.next = None
+        self.previous = None
 ```
-**The class LinkedList**
+**The class DoublyLinkedList**
 ```
-# Linkedlist class that takes in inserting a Node from head and inserting a Node from the last Node
-class LinkedList:
+class DoublyLinkedList:
+    
     def __init__(self):
         
-        # setting head to null because list is empty until data is added
+        # head and tail are empty until a Node has been added
         self.head = None
-        # no amount of Nodes are set yet therefore it starts empty
-        self.numNodes = 0
+        self.tail = None
 ```
-**Insertion at head - O(1)**
+**Insertion at tail - O(1)**
 ```
-    # Inserting a Node at the beginning, takes O(1) because the list always start from the head
-    def insert_start(self, data):
-        
-        # increment the reference value by 1 for every new item added
-        self.numNodes = self.numNodes + 1
-        # we now check to see if the Node is the head Node
-        new_node = Node(data)
-        
-        # seeing if the head is empty
-        # not is a logical operator, returns True when an expression is False (checks to see if two vars point to same obj in memory)
-        # True and True = True, True and False = False, False and False = False
-        if not self.head:
-            # the head is now the new node
-            self.head = new_node
-        else:
-            # making the added new node the new head
-            new_node.nextNode = self.head
-            # update the head node to now be the new_node
-            self.head = new_node
-```
-**Insertion at tail - O(n)**
-```
-    # Inserting a Node at the end, O(n) linear time because it has to pass each Node to tget to the end (linear search)
+    # inserts items at the end - O(1) runtime
     def insert_end(self, data):
         
-        # similar to inserting, we have to start from the head and work our way up
-        self.numNodes = self.numNodes + 1 
+        # set new_node to the Node object
         new_node = Node(data)
         
-        # points to the head of the list
-        actual_node = self.head
-        
-        # finding the last node of the list, if the Node being searched is not null -> keep searching for the end
-        while actual_node.nextNode is not None:
-            
-            # update actual_node, hopping from node to node: [3] -> [4] -> [6] -> [actual_node] -> null
-            actual_node = actual_node.nextNode
-        
-        # inserts the Node into the new assigned value new_node at the end
-        actual_node.nextNode = new_node
-```
-**Removing an item**
-```
-# removing specific data from within the list
-    # [2]->[4]->[1]->[3]->null | w\if we remove element [1] we set element [4] to point to ->[3]
-    def remove(self, data):
-        
-        # if the head is empty
+        # if the head is empty, we know the new_node is the head 
         if self.head is None:
             
-            # we return whatever is in the list
-            return
+            # set both the head and tail to the new_node
+            # head points at first item, tail points at last item
+            self.head = new_node
+            self.tail = new_node
         
-        # set the actual_node to the head
-        actual_node = self.head
-        # 
-        previous_node = None
-        
-        # we search for the item we want to delete by making sure the head is not empty and has data
-        while actual_node is not None and actual_node.data != data:
-            
-            # we consider the next previous element the head
-            previous_node = actual_node
-            
-            # after removal, we make the next item the new head
-            actual_node = actual_node.nextNode
-        
-        # if the head is empty
-        # search miss - the item is not present in the list
-        if actual_node is None:
-            return
-        
-        # update the size of list after removal
-        self.numNodes = self.numNodes - 1
-        
-        # if the previous head is empty (getting rid of the given Node
-        if previous_node is None:
-             
-             # give the head Node a new Node
-             self.head = actual_node.nextNode 
+        # when there is at least 1 item within the list
+        # we keep insering items at the tail
         else:
+            # the previous node is the tail, we have to set the next node to be the new tail
+            new_node.previous = self.tail
+            self.tail.next = new_node
             
-            # reset the previous Node to be the head
-            previous_node.nextNode = actual_node.nextNode
+            # update the new_node to now be the tail
+            self.tail = new_node
 ```
-**Array size and traverse**
+**Traverse forward - O(n)**
 ```
-# the size of the list
-    def arrSize(self):
+    # we can traverse the list in both directions | null -> [] -> [] -> [] -> null
+    def traverse_forward(self):
         
-        # get the number of nodes
-        return self.numNodes
-    
-    # traversing through the list and storing a ref to the actual_node at the beginning 
-    def traverse(self):
-        
+        # the actual_node start from the head
         actual_node = self.head
         
-        # not at the end of linklist
+        # loop when the actual_node is not empty, print out the actual_node
         while actual_node is not None:
             
-            print(actual_node.data)
-            actual_node = actual_node.nextNode
-
+             # .data is added to insert the items given
+            print('%d' % actual_node.data)
+            
+            # move from node to node within the list forwards
+            actual_node = actual_node.next
 ```
-**Inserting/Printing out data**
+**Traverse at backward - O(n)**
 ```
-# inserting a random set of data within the list        
-linked_list = LinkedList()
-
-# inserting at beginning - O(1)
-linked_list.insert_start(4)
-linked_list.insert_start(3)
-linked_list.insert_start(7)
-
-# inserting at end O(n)
-linked_list.insert_end(10)
-
-linked_list.traverse()
+# we can traverse the list in both directions | null <- [] <- [] <- [] <- null
+    def traverse_backward(self):
+        
+        # the actual_node starts from the tail
+        actual_node = self.tail
+        
+        # loop when the actual_node is not empty, print out the actual_node
+        while actual_node is not None:
+            
+            print('%d' % actual_node.data)
+            
+            # move from node to node within the list backwards
+            actual_node = actual_node.previous
+```
+**Function call: Inserting at end/traverse forward and backwards**
+```
+# function call
+if __name__ == '__main__':
+     listL = DoublyLinkedList()
+     
+     listL.insert_end(1)
+     listL.insert_end(5)
+     listL.insert_end(7)
+     listL.insert_end(3)
+     
+     listL.traverse_forward() # null<-[1]<->[5]<->[7]<->[3]->null
+     print("----")
+     listL.traverse_backward() # null<-[3]<->[7]<->[5]<->[1]->null
 ```
 
 
