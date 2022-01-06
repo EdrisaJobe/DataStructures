@@ -1,7 +1,7 @@
 # Doubly Linked List
-|Access| Insertion|Deletion |Description |
-|------|-------|------------|------------|
-O(n)    |O(1)   |O(n)       | A linear data structure that is used to hold data in individual objects called nodes. Main purpose is for the efficient **insertion and deletion** methods, can be used alongsides stacks and queues. 
+|Access| Search |Insertion head and tail|Deletion head and tail |Description |
+|------|----------|-------|------------|------------|
+O(n)    |O(n)     |O(1)   |O(1)       | A linear data structure that is used to hold data in individual objects called nodes. Main purpose is for the efficient **insertion and deletion** methods, can be used alongsides stacks and queues. 
 
  
 
