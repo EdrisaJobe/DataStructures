@@ -32,6 +32,26 @@ class DoublyLinkedList:
         self.head = None
         self.tail = None
 ```
+**Get middle node**
+```
+    # get the middle node using two pointers O(n), pointer1 = +1, pointer2 = +2
+    def getMiddleNode(self):
+        
+        # pointer1, slower - pointer2, faster
+        slowPointer = self.head
+        fastPointer = self.head
+        
+        # we can use is not None but without it, means the same thing
+        while fastPointer.next and fastPointer.next.next:
+            
+            # increment fastPointer by 2
+            fastPointer = fastPointer.next.next
+            # decrement slow pointer by 1
+            slowPointer = slowPointer.next
+        
+        # the slowPointer is pointing at the middle item
+        return slowPointer
+```
 **Insertion at tail - O(1)**
 ```
     # inserts items at the end - O(1) runtime
