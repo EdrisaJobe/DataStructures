@@ -1,7 +1,7 @@
 # Singly Linked List
-|Access| Insertion|Deletion |Description |
+|Access| Insertion head and tail|Deletion |Description |
 |------|-------|------------|------------|
-O(n)    |O(1)   |O(n)       | A linear data structure that is used to hold data in individual objects called nodes. Main purpose is for the efficient **insertion and deletion** methods, can be used alongsides stacks and queues. 
+O(n)    |O(1) - head O(n) - tail|O(n)       | A linear data structure that is used to hold data in individual objects called nodes. Main purpose is for the efficient **insertion and deletion** methods, can be used alongsides stacks and queues. 
 
  
 
