@@ -71,7 +71,7 @@ class LinkedList:
         
         # set the actual_node to the head
         actual_node = self.head
-        # 
+        # prev node is empty
         previous_node = None
         
         # we search for the item we want to delete by making sure the head is not empty and has data
