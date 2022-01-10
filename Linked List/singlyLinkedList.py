@@ -60,7 +60,7 @@ class LinkedList:
         actual_node.nextNode = new_node
     
     # removing specific data from within the list
-    # [2]->[4]->[1]->[3]->null | w\if we remove element [1] we set element [4] to point to ->[3]
+    # [2]->[4]->[1]->[3]->null | if we remove node [1] we set node [4] to point to ->[3]
     def remove(self, data):
         
         # if the head is empty
