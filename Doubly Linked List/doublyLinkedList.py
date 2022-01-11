@@ -91,14 +91,13 @@ class DoublyLinkedList:
             actual_node = actual_node.previous
 
 # function call
-if __name__ == '__main__':
-     listL = DoublyLinkedList()
+listL = DoublyLinkedList()
      
-     listL.insert_end(1)
-     listL.insert_end(5)
-     listL.insert_end(7)
-     listL.insert_end(3)
+listL.insert_end(1)
+listL.insert_end(5)
+listL.insert_end(7)
+listL.insert_end(3)
      
-     listL.traverse_forward()
-     print("----")
-     listL.traverse_backward()
+listL.traverse_forward()
+print("\nBackwards:")
+listL.traverse_backward()

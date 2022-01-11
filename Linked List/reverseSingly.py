@@ -36,7 +36,7 @@ class LinkedList:
             current_node.nextNode = prev_node
             # prev_node is now where the current_node is | null <-[] [prevNode/curr] -> [nextNode] -> null
             prev_node = current_node
-            # the current node is not the where the next_node is | null <-[] <- [prevNode]  [curr.next] -> null
+            # the current node is now where the next_node is | null <-[] <- [prevNode]  [curr.next] -> null
             current_node = nextNode
         # when the prev_node points to the last node, make it the head
         self.head = prev_node
@@ -152,6 +152,7 @@ linked_list.insert_start(17)
 
 # before reverse
 linked_list.traverse()
+
 # after reverse
 linked_list.reverse()
 print('\nReverse:')
