@@ -1,4 +1,4 @@
-# Singly Linked List
+# Stack
 |Access| Insertion tail|Deletion tail |Description |
 |------|-------|------------|------------|
 O(1)    |O(1) |O(1)       | A data type (str, int, float) that holds a linear sequence of items. Also referred to as LIFO meaning the last thing in is the first thing to be removed or added. Uses **Peek()** - Which shows the last item within a list. **Pop()** - Removes the last item added. **Push()** - Add an item at the top of the list. **is_empty()** - Boolean, checks if the stack is empty. e.g. 1DArray -> [1][2][3][4][5]
