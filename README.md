@@ -17,6 +17,8 @@ to use it as a practice guide or refresher on any topics you're not too strong i
 
 [![Stack - Learn about stack](https://img.shields.io/badge/Stack-Learn_about_stack-F46D01?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/Stack)
 
+[![Queue - Learn About Queue](https://img.shields.io/badge/Queue-Learn_About_Queue-A100FF?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/Queue)
+
 [![Heap - Learn about heap](https://img.shields.io/badge/Heap-Learn_about_heap-9999FF?style=for-the-badge)](https://github.com/EdrisaJobe/DataStructures/tree/main/Heap)
 
 These are some of many structures to implement, feel free to mess around and make operations that take in a faster time and spcae complexity. 
