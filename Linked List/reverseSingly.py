@@ -30,7 +30,7 @@ class LinkedList:
         # while the head is not empty loop
         while current_node is not None:
             
-            # update the references | [curr] -> [nextNode] -> [] -> null
+            # update the references | [curr] -> [nextNode] -> []  -> null
             nextNode = current_node.nextNode
             # current node of the next node is now the prev node | null <-[prevNode] [curr.next] -> [] -> null
             current_node.nextNode = prev_node

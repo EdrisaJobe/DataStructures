@@ -1,31 +1,97 @@
-class Stack:
+class Node:
+    
+    def __init__(self, data):
+        self.data = data
+        self.nextNode = None
+
+class LinkedList:
     
     def __init__(self):
-        self.stack = []
+        self.head = None
+        self.numNodes = 0
+        
+    def insertStart(self,data):
+        
+        self.numNodes = self.numNodes + 1
+        new_node = Node(data)
+        
+        if not self.head:
+            self.head = new_node
+        else:
+            new_node.nextNode = self.head
+            self.head = new_node
     
-    def push(self, data):
-        return self.stack.append(data)
+    def insertEnd(self, data):
+        
+        self.numNodes = self.numNodes + 1
+        new_node = Node(data)
+        currNode = self.head
+        
+        while currNode.nextNode is not None:
+            currNode = currNode.nextNode
+        currNode.nextNode = new_node
     
-    def is_empty(self):
-        return self.stack == []
+    def reverse(self):
+        
+        currNode = self.head
+        prevNode = None
+        
+        while currNode is not None:
+            
+            nextNode = currNode.nextNode
+            currNode.nextNode = prevNode
+            prevNode = currNode
+            currNode = nextNode
+        
+        self.head = prevNode
     
-    def pop(self):
-        data = self.stack[-1]
-        del self.stack[-1]
-        return data
-    
-    def peek(self):
-        return self.stack[-1]
-    
-    def size(self):
-        return len(self.stack)
+    def remove(self, data):
+        
+        if self.head is None:
+            return
+        
+        currNode = self.head
+        prevNode = None
+        
+        while currNode is not None and currNode.data != data:
+            
+            prevNode = currNode
+            currNode = currNode.nextNode
+            
+        if currNode is None:
+            return
+        
+        self.numNodes = self.numNodes - 1
+        
+        if prevNode is None:
+            self.head = currNode.nextNode
+        else:
+            prevNode.nextNode = currNode.nextNode
+            
+            
+    def traverse(self):
+        
+        currNode = self.head
+        
+        while currNode is not None:
+            print(currNode.data)
+            currNode = currNode.nextNode
 
-s = Stack()
+l = LinkedList()
 
-s.push(12)
-s.push(54)
-s.push(99)
+l.insertStart(23)
+l.insertStart(83)
+l.insertStart(93)
+l.insertStart(33)
 
-print(s.pop())
-print(s.peek())
-    
+l.insertEnd(44)
+l.insertEnd(63)
+l.insertEnd(14)
+
+l.remove(14)
+
+l.traverse()
+print('Reverse: ')
+l.reverse()
+
+l.traverse()
