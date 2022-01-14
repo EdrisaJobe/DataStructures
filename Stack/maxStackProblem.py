@@ -30,13 +30,13 @@ class MaxStack:
         self.maxStack.pop()
         return self.stack.pop()
 
-    # we get the last item of the maxStack
+    # we get the last item of the maxStack O(1)
     def getMax(self):
         return self.maxStack.pop()
 
 stack = MaxStack()
 
-stack.push(12)
+stack.push(332)
 stack.push(112)
 stack.push(512)
 stack.push(212)
