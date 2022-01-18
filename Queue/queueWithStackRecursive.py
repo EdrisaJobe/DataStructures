@@ -40,7 +40,7 @@ q.enqueue(102)
 print('Size before:')
 print(q.size())
 
-print('\nRemoval:')
+print('\nNew order:')
 print(q.dequeue())
 print(q.dequeue())
 print(q.dequeue())
