@@ -1,10 +1,11 @@
-items = {'Colors' : 'Yellow', 
-'Black' : 'White', 
-'Brown' : 'Green', 
-'Orange' : 'Purple'}
+items = {
+    'Blue' : 'Yellow', 
+    'Black' : 'White', 
+    'Brown' : 'Green', 
+    'Orange' : 'Purple'}
 
 #deletes from the list
-del items['Green']
+del items['Brown']
 items['White'] = 'Tan'
 
 print (items)
