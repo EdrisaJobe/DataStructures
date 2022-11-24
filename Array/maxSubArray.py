@@ -8,16 +8,17 @@ def maxSubArray(nums):
     # going through each element within nums
     for n in nums:
         
-        # if any sum is negative, we reset to 0
+        # if any sum value is negative, we reset to 0
         if current < 0:
             current = 0
         
-        # saving our current number
+        # adding the elements if positive
         current += n
 
         # we get the max of the current, saving it to maxSub
-        maxSub = max(current, maxSub)
+        maxSub = max(maxSub, current)
     
     return maxSub
 
 print(maxSubArray([-1,3,2,5,8])) # output: 18
+                  # [0, 3+2=5, 5+5=10, 10+8=18]
