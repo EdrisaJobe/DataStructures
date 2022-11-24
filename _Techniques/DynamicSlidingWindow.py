@@ -5,7 +5,7 @@
 
 def dynamicWindow(nums, target):
 
-    minWindowSize = max(nums)
+    minWindowSize = nums[0]
     currentSum = 0
     windowStart = 0
     windowEnd = 0
