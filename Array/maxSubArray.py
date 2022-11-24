@@ -3,20 +3,20 @@
 def maxSubArray(nums):
 
     maxSub = nums[0] # default first index
-    current = 0 # saved values
+    currentSum = 0 # saved values
 
     # going through each element within nums
     for n in nums:
         
         # if any sum value is negative, we reset to 0
-        if current < 0:
-            current = 0
+        if currentSum < 0:
+            currentSum = 0
         
         # adding the elements if positive
-        current += n
+        currentSum += n
 
         # we get the max of the current, saving it to maxSub
-        maxSub = max(maxSub, current)
+        maxSub = max(maxSub, currentSum)
     
     return maxSub
 
