@@ -9,7 +9,7 @@ def longestRepeatingSub(string, n):
 
     for right in range(len(string)):
 
-        # if char exists we add to count else we set it to 0
+        # we get the key within map and increment it's count if we get same keys
         count[string[right]] = 1 + count.get(string[right], 0)
 
         # num of replacements, if greater than n we shift left pointer
