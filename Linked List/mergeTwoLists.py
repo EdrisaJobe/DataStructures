@@ -3,11 +3,8 @@
 class LinkedList:
     def mergeTwo(self, lst1, lst2):
 
-        lst1 = Node(val)
-        lst2 = Node(val)
-
         # edge case sees first or last value of range not mid
-        # we need to see mid vals too so we use dummy node
+        # we need to see mid vals too so we use dummy node (class Node)
         dummy = Node()
         tail = dummy
 
