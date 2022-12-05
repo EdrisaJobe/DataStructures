@@ -15,19 +15,19 @@ def longestPalindrome(string):
         else:
             count[w] += 1
 
-        # grabs the keys values and appending based on conditions
-        for times in count.values():
-            res.append(times)
+    # grabs the keys values and appending based on conditions
+    for times in count.values():
+        res.append(times)
 
-            # if odd add to odd
-            if times % 2 != 0:
-                odd += 1
+        # if odd add to odd
+        if times % 2 != 0:
+            odd += 1
 
-        # calculations if odd or even
-        if odd != 0:
-            return sum(res) - odd + 1
-        elif odd == 0:
-            return sum(res) - odd
+    # calculations if odd or even
+    if odd != 0:
+        return sum(res) - odd + 1
+    elif odd == 0:
+        return sum(res) - odd
 
     return res
         
