@@ -1,0 +1,37 @@
+#
+# Time: 
+def longestPalindrome(string):
+    
+    odd = 0 # store odd num frequency
+    res = [] # word frequency
+    count = {}
+
+    for w in string:
+
+        if w not in count:
+
+            # we set each value to 1
+            count[w] = 1
+        else:
+            count[w] += 1
+
+        # grabs the keys values and appending based on conditions
+        for times in count.values():
+            res.append(times)
+
+            # if odd add to odd
+            if times % 2 != 0:
+                odd += 1
+
+        # calculations if odd or even
+        if odd != 0:
+            return sum(res) - odd + 1
+        elif odd == 0:
+            return sum(res) - odd
+
+    return res
+        
+print(longestPalindrome("abccccdd"))
+
+
+
