@@ -31,7 +31,7 @@ def longestPalindrome(string):
 
     return res
         
-print(longestPalindrome("abccccdd"))
+print(longestPalindrome("abccccdd")) # Output: 7 - (dccaccd)
 
 
 
