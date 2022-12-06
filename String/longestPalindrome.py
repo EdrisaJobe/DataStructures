@@ -25,9 +25,9 @@ def longestPalindrome(string):
 
     # calculations if odd or even
     if odd != 0:
-        print(sum(res) - odd + 1)
+        return sum(res) - odd + 1
     elif odd == 0:
-        print(sum(res) - odd)
+        return sum(res) - odd
 
     return res
         
