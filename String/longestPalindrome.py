@@ -1,5 +1,5 @@
-#
-# Time: 
+# Find the longest palindrome that can be made in a string
+# Time: O(n)
 def longestPalindrome(string):
     
     odd = 0 # store odd num frequency
@@ -25,9 +25,9 @@ def longestPalindrome(string):
 
     # calculations if odd or even
     if odd != 0:
-        return sum(res) - odd + 1
+        print(sum(res) - odd + 1)
     elif odd == 0:
-        return sum(res) - odd
+        print(sum(res) - odd)
 
     return res
         
