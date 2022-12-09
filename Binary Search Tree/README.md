@@ -1,7 +1,7 @@
 # Stack - (LIFO)
-|Search| Insertion|Deletion|Description |
-|------|-------|---|---------------|
-O(logN)    |O(logN) |  O(logN)    | With an **Array** and **LinkedList** it takes O(n) time to search or remove an arbritrary item, we use a BST in order to make this process O(1) removing and searching **allowing to store items efficiently**. We start from the middle and check the left or right sub arrays for the item we're looking for. Left child smaller than parent, right child greater than parent. (**PRE, IN, POST orders)**
+|Search| Insertion|Deletion|Space|Description |
+|------|-------|---|--------|-------|
+O(logN)    |O(logN) |  O(logN)|  O(N)  | With an **Array** and **LinkedList** it takes O(n) time to search or remove an arbritrary item, we use a BST in order to make this process O(1) removing and searching **allowing to store items efficiently**. We start from the middle and check the left or right sub arrays for the item we're looking for. Left child smaller than parent, right child greater than parent. (**PRE, IN, POST orders)**
 
 # 🛠️ Step-by-step
 
