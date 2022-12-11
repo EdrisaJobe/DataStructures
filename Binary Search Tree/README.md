@@ -1,7 +1,7 @@
 # Stack - (LIFO)
-|Access| Insertion tail|Deletion tail |Description |
-|------|-------|------------|------------|
-O(1)    |O(1) |O(1)       | A data type (str, int, float) that holds a linear sequence of items. Also referred to as LIFO meaning the last thing in is the first thing to be removed or added. Uses **Peek()** - Which shows the last item within a list. **Pop()** - Removes the last item added. **Push()** - Add an item at the top of the list. **is_empty()** - Boolean, checks if the stack is empty. e.g. 1DArray -> [1][2][3][4][5]
+|Search| Insertion|Deletion|Space|Description |
+|------|-------|---|--------|-------|
+O(logN)    |O(logN) |  O(logN)|  O(N)  | With an **Array** and **LinkedList** it takes O(n) time to search or remove an arbritrary item, we use a BST in order to make this process O(1) removing and searching **allowing to store items efficiently**. We start from the middle and check the left or right sub arrays for the item we're looking for. Left child smaller than parent, right child greater than parent. (**PRE, IN, POST orders)**
 
 # 🛠️ Step-by-step
 
