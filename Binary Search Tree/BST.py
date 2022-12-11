@@ -24,7 +24,7 @@ class BinarySearchTree:
             self.root = Node(data, None)
         else:
             
-            # calls the isnert() funct, when we try to insert data
+            # calls the insertNode() func, when we try to insert data
             self.insertNode(data, self.root)
             
     def insertNode(self, data, node):
@@ -34,11 +34,13 @@ class BinarySearchTree:
             if node.left is not None:
                 self.insertNode(data, node.left)
             else:
+
+                # new left child, node will be the parent
                 node.left = Node(data, node)
                 
         # we are traversing the right subtree
-        else:
-            if node.right is not None:
+        elif data > node.data:
+            if node.right: # is not None
                 self.insertNode(data, node.right)
             else:
                 node.right = Node(data, node)
