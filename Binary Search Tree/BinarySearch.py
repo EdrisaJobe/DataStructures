@@ -6,10 +6,10 @@ def search(nums, target):
     left = 0
     right = len(nums)-1
 
-    while left < right:
+    while left <= right:
 
         # we get the mide value
-        mid = (left + right) // 2
+        mid = (right + left) // 2
 
         # if the mid is the target we return our value
         if nums[mid] == target:
@@ -18,12 +18,11 @@ def search(nums, target):
         # if mid greater than target, decrement right pointer
         elif nums[mid] > target:
 
-            right -= 1
+            right -=1
         
         # mid less than target, increment left pointer
         else:
-            left += 1
-
+            left +=1
     return -1
 
-print(search([1,2,3], 3))
+print(search([3], 3))
