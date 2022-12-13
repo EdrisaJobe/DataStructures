@@ -3,7 +3,7 @@
 def firstBadVer(nums):
 
     res = 0
-    left = 1
+    left = 0
 
     # not a list we can't use lne(n)-1
     right = n
@@ -11,7 +11,7 @@ def firstBadVer(nums):
     while left <= right:
 
         # left +, to prevent overflow in the case the array becomes HUGE
-        mid = left + (left - right) // 2
+        mid = left + (right - left) // 2
         
         # seeing if mid in API
         if isBadVersion(mid):
