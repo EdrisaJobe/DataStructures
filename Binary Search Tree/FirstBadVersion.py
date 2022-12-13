@@ -10,7 +10,8 @@ def firstBadVer(nums):
 
     while left <= right:
 
-        mid = (left + right) // 2
+        # left +, to prevent overflow in the case the array becomes HUGE
+        mid = left + (left - right) // 2
         
         # seeing if mid in API
         if isBadVersion(mid):
