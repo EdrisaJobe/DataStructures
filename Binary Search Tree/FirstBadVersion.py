@@ -1,5 +1,5 @@
 # API which returns wether version is bad, implement to find first bad version
-# Time: O(log N)
+# Time: O(log N) Space: O(1) - only uses constants for vars
 def firstBadVer(nums):
 
     left = 1
@@ -13,9 +13,10 @@ def firstBadVer(nums):
         # seeing if mid in API
         if isBadVersion(mid):
 
+            # we set the right pointer to now be the mid val
             right = mid
         else:
-
+            
             # else if we don't see the val in the API we move left pointer
             left = mid - 1
 
