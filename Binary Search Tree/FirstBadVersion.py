@@ -2,11 +2,8 @@
 # Time: O(log N)
 def firstBadVer(nums):
 
-    res = n
-    left = 0
-
-    # not a list we can't use lne(n)-1
-    right = n
+    left = 1
+    right = nums
 
     while left <= right:
 
@@ -16,15 +13,13 @@ def firstBadVer(nums):
         # seeing if mid in API
         if isBadVersion(mid):
 
-            # update res to now be the mid, and move the pointer back
-            res = mid
-            right = mid - 1
+            right = mid
         else:
 
             # else if we don't see the val in the API we move left pointer
-            left = mid + 1
+            left = mid - 1
 
-    return -1
+    return left
 
 print(firstBadVer([1,2,3,4,5,6]))# left = 1, right = 6, mid = 3, badVersion = 3    
 
