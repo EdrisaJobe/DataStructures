@@ -2,7 +2,7 @@
 # Time: O(log N)
 def firstBadVer(nums):
 
-    res = 0
+    res = n
     left = 0
 
     # not a list we can't use lne(n)-1
