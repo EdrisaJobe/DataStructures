@@ -24,7 +24,7 @@ def firstBadVer(nums):
             # else if we don't see the val in the API we move left pointer
             left = mid + 1
 
-    return res
+    return -1
 
 print(firstBadVer([1,2,3,4,5,6]))# left = 1, right = 6, mid = 3, badVersion = 3    
 
