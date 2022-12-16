@@ -2,6 +2,7 @@
 # Time: O(log N) Space: O(1) - only uses constants for vars
 def firstBadVer(nums):
 
+    # from [1 ... nums] to len of nums
     left = 1
     right = nums
 
@@ -16,7 +17,7 @@ def firstBadVer(nums):
             # we set the right pointer to now be the mid val
             right = mid
         else:
-            
+
             # else if we don't see the val in the API we move left pointer
             left = mid - 1
 
