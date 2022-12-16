@@ -14,7 +14,7 @@ def firstBadVer(nums):
         # seeing if mid in API
         if isBadVersion(mid):
 
-            # we set the right pointer to now be the mid val
+            # we set the right pointer to now be the new boundary
             right = mid
         else:
 
