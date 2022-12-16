@@ -19,7 +19,7 @@ def firstBadVer(nums):
         else:
 
             # else if we don't see the val in the API we move left pointer
-            left = mid - 1
+            left = mid + 1
 
     return left
 
