@@ -1,103 +1,79 @@
-# starting with a class Node, followed by the main LinkedList class
-# Doubly | null <- [] <-> [] <-> [] -> null
-class Node:
-    
-    def __init__(self, data):
-        
-        # data will take in whatever amount we give it
-        self.data = data
-        
-        # we want each Node to reference to one another
-        self.next = None
-        self.previous = None
-        
-    # get the middle node using two pointers O(n), pointer1 = +1, pointer2 = +2
-    def getMiddleNode(self):
-        
-        # pointer1, slower - pointer2, faster
-        slowPointer = self.head
-        fastPointer = self.head
-        
-        # we can use is not None but without it, means the same thing
-        while fastPointer.next and fastPointer.next.next:
-            
-            # increment fastPointer by 2
-            fastPointer = fastPointer.next.next
-            # decrement slow pointer by 1
-            slowPointer = slowPointer.next
-        
-        # the slowPointer is pointing at the middle item
-        return slowPointer
-        
-class DoublyLinkedList:
-    
-    def __init__(self):
-        
-        # head and tail are empty until a Node has been added
-        self.head = None
-        self.tail = None
-    
-    # inserts items at the end - O(1) runtime
-    def insert_end(self, data):
-        
-        # set new_node to the Node object
-        new_node = Node(data)
-        
-        # if the head is empty, we know the new_node is the head 
-        if self.head is None:
-            
-            # set both the head and tail to the new_node
-            # head points at first item, tail points at last item
-            self.head = new_node
-            self.tail = new_node
-        
-        # when there is at least 1 item within the list
-        # we keep insering items at the tail
-        else:
-            # the previous node is the tail, we have to set the next node to be the new tail
-            new_node.previous = self.tail
-            self.tail.next = new_node
-            
-            # update the new_node to now be the tail
-            self.tail = new_node
-    
-    # we can traverse the list in both directions | null -> [] -> [] -> [] -> null
-    def traverse_forward(self):
-        
-        # the actual_node start from the head
-        actual_node = self.head
-        
-        # loop when the actual_node is not empty, print out the actual_node
-        while actual_node is not None:
-            
-             # .data is added to insert the items given
-            print('%d' % actual_node.data)
-            
-            # move from node to node within the list forwards
-            actual_node = actual_node.next
-    
-    # we can traverse the list in both directions | null <- [] <- [] <- [] <- null
-    def traverse_backward(self):
-        
-        # the actual_node starts from the tail
-        actual_node = self.tail
-        
-        # loop when the actual_node is not empty, print out the actual_node
-        while actual_node is not None:
-            
-            print('%d' % actual_node.data)
-            
-            # move from node to node within the list backwards
-            actual_node = actual_node.previous
+# This is an implementation of a Doubly Linked List with dummy head/tail nodes
+# Visual representation of the initial empty list:
+#
+# Head (-1) <-> Tail (-1)
+#
+# After adding nodes:
+# Head (-1) <-> Node1 <-> Node2 <-> ... <-> NodeN <-> Tail (-1)
 
-# function call
-listL = DoublyLinkedList()
-     
-listL.insert_end(1)
-listL.insert_end(5)
-listL.insert_end(7)
-listL.insert_end(3)
-     
-listL.traverse_forward()
-print("\nBackwards:")
-listL.traverse_backward()
+class Node:
+    def __init__(self, value):
+        self.value = value  # The data stored in the node
+        self.next = None    # Reference to next node
+        self.prev = None    # Reference to previous node
+
+class LinkedList:
+    def __init__(self):
+        # Create dummy head and tail nodes with value -1
+        # Visual: Head (-1) <-> Tail (-1)
+        self.head = Node(-1)
+        self.tail = Node(-1)
+        self.head.next = self.tail
+        self.tail.prev = self.head
+
+    def insertFront(self, value):
+        # Insert at front (after head)
+        # Before: Head <-> A <-> B
+        # After:  Head <-> NewNode <-> A <-> B
+        newNode = Node(value)
+        newNode.prev = self.head
+        newNode.next = self.head.next
+        
+        self.head.next.prev = newNode
+        self.head.next = newNode
+
+    def insertEnd(self, value):
+        # Insert at end (before tail)
+        # Before: A <-> B <-> Tail
+        # After:  A <-> B <-> NewNode <-> Tail
+        newNode = Node(value)
+        newNode.next = self.tail
+        newNode.prev = self.tail.prev
+        
+        self.tail.prev.next = newNode
+        self.tail.prev = newNode
+
+    def removeFront(self):
+        # Remove first real node (after head)
+        # Before: Head <-> A <-> B <-> Tail
+        # After:  Head <-> B <-> Tail
+        self.head.next.next.prev = self.head
+        self.head.next = self.head.next.next
+
+    def removeEnd(self):
+        # Remove last real node (before tail)
+        # Before: Head <-> A <-> B <-> Tail
+        # After:  Head <-> A <-> Tail
+        self.tail.prev.prev.next = self.tail
+        self.tail.prev = self.tail.prev.prev
+
+    def traverse(self):
+        # Print all nodes from head to tail
+        curr = self.head.next
+        while curr != self.tail:
+            print(curr.value, " <-> ", end="")
+            curr = curr.next
+        print("Tail")
+
+# Example usage that creates this list:
+# Head <-> 99 <-> 79 <-> 23 <-> 54 <-> 87 <-> Tail
+ll = LinkedList()
+
+ll.insertFront(23)  # Head <-> 23 <-> Tail
+ll.insertFront(79)  # Head <-> 79 <-> 23 <-> Tail  
+ll.insertFront(99)  # Head <-> 99 <-> 79 <-> 23 <-> Tail
+
+ll.insertEnd(54)    # Head <-> 99 <-> 79 <-> 23 <-> 54 <-> Tail
+ll.insertEnd(87)    # Head <-> 99 <-> 79 <-> 23 <-> 54 <-> 87 <-> Tail
+
+ll.traverse()       # Prints: 99 <-> 79 <-> 23 <-> 54 <-> 87 <-> Tail
