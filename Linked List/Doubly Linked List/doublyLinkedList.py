@@ -76,4 +76,6 @@ ll.insertFront(99)  # Head <-> 99 <-> 79 <-> 23 <-> Tail
 ll.insertEnd(54)    # Head <-> 99 <-> 79 <-> 23 <-> 54 <-> Tail
 ll.insertEnd(87)    # Head <-> 99 <-> 79 <-> 23 <-> 54 <-> 87 <-> Tail
 
+ll.removeEnd()
+
 ll.traverse()       # Prints: 99 <-> 79 <-> 23 <-> 54 <-> 87 <-> Tail
