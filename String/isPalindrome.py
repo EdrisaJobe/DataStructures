@@ -1,38 +1,24 @@
-# word that can be spelt the same back and forwards
-def isPalindrome(s):
+# Palindrome Solution Explanation:
+# 1. First, we clean the string by:
+#    - Converting to lowercase
+#    - Removing non-alphanumeric characters
+#    - Joining characters into a new string
+# 2. Then we use two pointers (left and right) to compare characters from both ends
+# 3. If characters don't match, it's not a palindrome
+# 4. If we make it through all comparisons, it is a palindrome
 
-    # original and reversed vars
-    originalStr = s
-    reversedStr = reverse(s)
+def palindrome(s):
+    # Clean the string - keep only alphanumeric chars in lowercase
+    s = ''.join(c.lower() for c in s if c.isalnum())
 
-    # if both are the same words return True
-    if originalStr == reversedStr:
-        return True
-    return False
+    left, right = 0, len(s)-1
 
-def reverse(data):
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
 
-    # strings are immutable, we save it as list
-    data = list(data)
+    return True
 
-    # setup two pointers to check each char
-    startIndex = 0
-    endIndex = len(data)-1
-
-    # a loop to see if start is less than end
-    while startIndex < endIndex:
-
-        # swap the chars
-        data[startIndex], data[endIndex] = data[endIndex], data[startIndex]
-
-        # increment and decrement the pointers
-        startIndex = startIndex + 1
-        endIndex = endIndex - 1
-
-    # convert the data to string
-    return ''.join(data)
-
-print(isPalindrome("madam"))
-
-
-
+print(palindrome("A man, a plan, a canal: Panama"))
