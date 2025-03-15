@@ -10,14 +10,14 @@ def binarySearch(nums, target):
         # Calculate middle index
         mid = (left + right) // 2
 
-        # If target is greater than mid value, search right half
-        if target > nums[mid]:
+        # If target is greater than rightmost value, search right half
+        if target > nums[right]:
 
             # Move left pointer to right of middle
             left = mid + 1
 
-        # Else If target is less than mid value, search left half
-        elif target < nums[mid]:
+        # If target is less than leftmost value, search left half
+        if target < nums[left]:
 
             # Move right pointer to left of middle
             right = mid - 1
@@ -32,4 +32,4 @@ def binarySearch(nums, target):
     return -1
 
 # Test the binary search function with sample input
-print(binarySearch([1,2,3,4,5,6,7,8,9], 2))
+print(binarySearch([1,2,3,4,5,6,7,8,9]))
