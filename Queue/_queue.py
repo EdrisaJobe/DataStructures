@@ -18,6 +18,7 @@ class Queue:
         return self.queue.append(data)
     
     # O(n) - removes items at the beginning of the queue and shifts the new items to the left
+    # O(1) - if we pop from end
     def dequeue(self):
         
         # getting rid of the the first item
