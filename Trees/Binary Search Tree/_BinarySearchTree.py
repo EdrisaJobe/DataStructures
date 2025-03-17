@@ -23,10 +23,7 @@ class BinarySearchTree:
         elif value < root.value:
             # Recursively insert into the left subtree and update the left child reference
             root.left = self.insert(root.left, value)
-        # If the value is equal to the root's value, don't insert (BST typically doesn't allow duplicates)
-        else:
-            return root
-            
+
         # Return the root node after insertion
         return root
 
