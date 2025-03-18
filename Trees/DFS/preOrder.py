@@ -35,14 +35,12 @@ def preOrder(root):
 
     while curr or stack:
         if curr:    
-            print(curr.val)  # Process current node
-
-            if curr.right:
-                stack.append(curr.right)  # Save right child for later
-            curr = curr.left  # Move to left child
+           print(curr.val)
+           stack.append(curr)
+           curr = curr.left
         else:
-            curr = stack.pop()  # No more left children, process right
-
+            curr = stack.pop()
+            curr = curr.right
 # Recursive pre-order traversal
 def preOrderRecur(root):
     """
