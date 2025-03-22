@@ -1,35 +1,35 @@
-# Import Counter class from collections module to count character frequencies
-from collections import Counter
-
-# Function that finds length of longest palindrome that can be built from input string
-# Time: O(n) where n is length of input string - we iterate through string once to count frequencies
-# Space: O(k) where k is number of unique characters in string - we store character counts in Counter
-# Example:
-# Input: "abccccdd"
-# Character counts: {'a':1, 'b':1, 'c':4, 'd':2}
-# Can use: 4 'c's (2 pairs), 2 'd's (1 pair), and 1 'a' or 'b' in middle
-# Result: "dccaccd" (length 7)
+# Algorithm explanation:
+# 1. We use a set to track characters we've seen an odd number of times
+# 2. For each character in the string:
+#    - If we've seen it before (it's in the set), we remove it (now we have an even count)
+#      and add 2 to our length (we can use this pair in our palindrome)
+#    - If we haven't seen it, we add it to the set
+# 3. If there are any characters left in the set, we can use one of them as the center
+#    of the palindrome, so we add 1 to the length
+# 4. Return the final length
 def longestPalindrome(s):
-        
-    # Count frequency of each character in input string
-    count = Counter(s)
-    # Track how many pairs of characters we can use
-    result = 0
+    count = set()
+    length = 0
 
-    # For each character count in our frequency counter
-    for n in count.values():
-        # Add number of complete pairs we can make (n divided by 2 rounded down)
-        result += n // 2
-        
-    # If we have any single characters left over (total pairs * 2 < string length)
-    if result * 2 < len(s):
-        # We can use one single character in middle, so multiply pairs by 2 and add 1
-        result = result * 2 + 1
-    else:
-        # Otherwise just multiply pairs by 2 for total palindrome length
-        result *= 2
-        
-    return result
+    for c in s:
+        if c in count:
+            count.remove(c)  # Found a pair
+            length += 2      # Add this pair to our palindrome
+        else:
+            count.add(c)     # First occurrence of this character
 
-# Test the function with example input
-print(longestPalindrome("abccccdd"))
+    # We can use one character with odd frequency as the center of the palindrome
+    if count:
+        length += 1
+
+    return length
+print(longestPalindrome("abbbbc"))# 5 because bbabb or bbcbb
+# Visualization example:
+# For string "aabcc":
+# 1. 'a' -> add to set: {'a'}, length = 0
+# 2. 'a' -> remove from set: {}, length = 2
+# 3. 'b' -> add to set: {'b'}, length = 2
+# 4. 'c' -> add to set: {'b', 'c'}, length = 2
+# 5. 'c' -> remove from set: {'b'}, length = 4
+# 6. Set is not empty, so length += 1
+# 7. Return length = 5 (can form "abcba" or "acbca")
