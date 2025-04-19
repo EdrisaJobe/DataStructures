@@ -1,5 +1,6 @@
-# Min Heap Implementation
+# Python's heap is a Min Heap Implementation
 # A min heap is a complete binary tree where the value of each node is less than or equal to the values of its children
+# Only the last level can be not fully filled
 class Heap:
     def __init__(self):
         # Initialize with [0] to simplify index calculations
@@ -15,7 +16,7 @@ class Heap:
         # Get the index of the newly added element
         i = len(self.heap) - 1
 
-        # Heapify up (bubble up) operation
+        # Heapify up (bubble up or percolate up) operation
         # While the current element is smaller than its parent, swap them
         # This maintains the min-heap property where parent is smaller than children
         while i > 1 and self.heap[i] < self.heap[i // 2]:
